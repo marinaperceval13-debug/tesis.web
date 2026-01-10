@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("nav a");
   const contenido = document.getElementById("contenido");
+  const portada = document.querySelector(".portada");
 
   async function cargarPagina(pagina) {
     contenido.innerHTML = "<p class='cargando'>Cargando...</p>";
@@ -16,12 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
   links.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
+
+      // Quitar portada al hacer clic en cualquier pestaña
+      if (portada) {
+        portada.style.display = "none";
+      }
+
       links.forEach(l => l.classList.remove("active"));
       link.classList.add("active");
       cargarPagina(link.dataset.page);
     });
   });
 
-  // Cargar la primera por defecto
+  // Cargar la primera pestaña (resumen)
   cargarPagina("resumen.html");
 });
