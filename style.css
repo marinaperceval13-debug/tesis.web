@@ -115,3 +115,46 @@ footer {
   max-width: 700px;
   margin: 1rem auto;
 }
+
+/* === SECCIÓN CONTACTO === */
+.contacto {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #e5e7eb;
+}
+
+.contacto h2 {
+  color: #facc15;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.contacto ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contacto li {
+  margin: 0.3rem 0;
+}
+
+.imagen-contacto {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.imagen-contacto:hover {
+  transform: scale(1.03);
+  opacity: 1;
+  cursor: zoom-in;
+}
+
+/* === EFECTO BRILLO DORADO === */
+h1, h2, nav a:hover, nav a.active {
+  ...
+}
