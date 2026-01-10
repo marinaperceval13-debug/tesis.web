@@ -1,104 +1,64 @@
-<script>
-  const user = prompt("Usuario:");
-  const pass = prompt("Contraseña:");
-
-  if (!(user === "batsearcher" && pass === "birdimpact2026")) {
-    document.write("<h2>❌ Acceso denegado</h2>");
-    setTimeout(() => window.location.href = "https://www.google.com", 1500);
-  }
-</script>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estudio de los sesgos en las estimaciones de mortalidad de aves y murciélagos</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso restringido — Batsearcher</title>
   <style>
-    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    h1, h2, h3 { font-family: 'Merriweather', serif; }
-    .gradient-text {
-      background: linear-gradient(90deg, #a0aec0, #f6e05e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    body {
+      background: #0d1117;
+      color: #e5e7eb;
+      font-family: "Inter", sans-serif;
+      text-align: center;
+      padding-top: 15%;
+    }
+    h1 {
+      color: #facc15;
+    }
+    input {
+      margin: 10px;
+      padding: 10px;
+      width: 220px;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
+      font-size: 1rem;
+    }
+    button {
+      background: #facc15;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #eab308;
     }
   </style>
 </head>
-<body class="bg-[#0d1117] text-gray-200">
-  <!-- Header -->
-  <header class="relative bg-gradient-to-b from-black/80 to-transparent">
-    <img src="https://source.unsplash.com/1600x600/?wind-turbine,birds,sunset" alt="Aves y turbinas eólicas" class="w-full h-64 object-cover opacity-40">
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-      <h1 class="text-3xl md:text-5xl font-bold gradient-text">Estudio de los sesgos en las estimaciones de mortalidad de aves y murciélagos</h1>
-      <p class="text-lg text-gray-300 mt-3">Batsearcher — Universidad Bird Impact</p>
-    </div>
-    <nav class="sticky top-0 bg-black/70 backdrop-blur-md flex justify-center gap-6 py-3 text-sm md:text-base">
-      <a href="#abstract" class="hover:text-yellow-400">Resumen</a>
-      <a href="#objectives" class="hover:text-yellow-400">Objetivos</a>
-      <a href="#methodology" class="hover:text-yellow-400">Metodología</a>
-      <a href="#results" class="hover:text-yellow-400">Resultados</a>
-      <a href="#references" class="hover:text-yellow-400">Bibliografía</a>
-      <a href="#contact" class="hover:text-yellow-400">Contacto</a>
-    </nav>
-  </header>
+<body>
+  <h1>🔒 Acceso restringido</h1>
+  <p>Introduce la contraseña para acceder</p>
+  <input type="password" id="clave" placeholder="Contraseña">
+  <br>
+  <button onclick="entrar()">Entrar</button>
 
-  <!-- Abstract -->
-  <section id="abstract" class="max-w-3xl mx-auto py-16 px-6">
-    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Resumen / Abstract</h2>
-    <p class="leading-relaxed text-gray-300">
-      Este estudio caracteriza sistemáticamente cómo se han estudiado y estimado los impactos de parques eólicos sobre aves y murciélagos, 
-      identificando patrones, sesgos y prácticas metodológicas que condicionan la fiabilidad de las estimaciones de mortalidad y riesgo.
-    </p>
-  </section>
-
-  <!-- Objetivos -->
-  <section id="objectives" class="max-w-3xl mx-auto py-16 px-6 bg-[#111827] rounded-2xl shadow-md shadow-black/50">
-    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Objetivos</h2>
-    <ul class="list-decimal ml-6 space-y-2 text-gray-300">
-      <li>Identificar los principales enfoques utilizados para estimar mortalidad en fauna voladora.</li>
-      <li>Detectar los sesgos metodológicos más comunes.</li>
-      <li>Evaluar la coherencia entre distintos estudios y regiones geográficas.</li>
-      <li>Proponer recomendaciones para mejorar la precisión y transparencia en las estimaciones futuras.</li>
-    </ul>
-  </section>
-
-  <!-- Metodología -->
-  <section id="methodology" class="max-w-3xl mx-auto py-16 px-6">
-    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Metodología</h2>
-    <p class="leading-relaxed text-gray-300">
-      Se realizó una revisión sistemática de literatura sobre estudios de mortalidad de aves y murciélagos en parques eólicos, 
-      clasificando metodologías, fuentes de datos, esfuerzo de búsqueda y tasas de corrección aplicadas. 
-      Se aplicaron análisis estadísticos para evaluar tendencias y sesgos potenciales.
-    </p>
-  </section>
-
-  <!-- Resultados -->
-  <section id="results" class="max-w-3xl mx-auto py-16 px-6 bg-[#111827] rounded-2xl shadow-md shadow-black/50">
-    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Resultados y Conclusiones</h2>
-    <p class="leading-relaxed text-gray-300">
-      Los resultados preliminares sugieren una fuerte variabilidad entre estudios y regiones, indicando la presencia de sesgos asociados 
-      al esfuerzo de muestreo, condiciones ambientales y subestimaciones sistemáticas en especies de hábitos nocturnos.  
-      Se propone la estandarización de protocolos y la integración de tecnologías de detección automatizada.
-    </p>
-  </section>
-
-  <!-- Bibliografía -->
-  <section id="references" class="max-w-3xl mx-auto py-16 px-6">
-    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Bibliografía</h2>
-    <p class="text-gray-400 italic">[Pendiente de completar: incluir citas bibliográficas y referencias.]</p>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contact" class="max-w-3xl mx-auto py-16 px-6 bg-[#111827] rounded-2xl shadow-md shadow-black/50 text-center">
-    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Contacto</h2>
-    <p class="text-gray-300 mb-2">📧 <a href="mailto:contacto@birdimpact.edu" class="text-yellow-400 hover:underline">contacto@birdimpact.edu</a></p>
-    <p class="text-gray-300">🌐 <a href="#" class="hover:underline">LinkedIn</a> | <a href="#" class="hover:underline">GitHub</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center text-gray-500 py-8 text-sm">
-    © 2026 Batsearcher · Universidad Bird Impact · Diseñado con 🧙‍♂️ Grimoire
-  </footer>
+  <script>
+    function entrar() {
+      const clave = document.getElementById("clave").value.trim();
+      if (clave === "birdimpact2026") {
+        document.body.innerHTML = `
+          <h1 style="color:#facc15;">Bienvenida, Batsearcher 🦇</h1>
+          <p style="margin-top:20px;">Cargando el contenido...</p>
+        `;
+        setTimeout(() => {
+          window.location.href = "contenido.html";
+        }, 1000);
+      } else {
+        alert("Contraseña incorrecta");
+      }
+    }
+  </script>
 </body>
 </html>
