@@ -21,7 +21,7 @@ header {
 
 h1 {
   font-size: 1.9rem;
-  color: #facc15;
+  color: inherit;
   margin: 0;
   line-height: 1.3;
 }
@@ -82,8 +82,8 @@ main {
 }
 
 main h2 {
-  color: #facc15;
-  border-bottom: 2px solid #facc15;
+  color: inherit;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.4);
   padding-bottom: .3rem;
 }
 
@@ -102,12 +102,12 @@ footer {
 .portada {
   text-align: center;
   padding: 3rem 2rem;
-  color: #facc15;
+  color: inherit;
 }
 
 .portada h2 {
   font-size: 2rem;
-  color: #facc15;
+  color: inherit;
 }
 
 .portada p {
@@ -154,7 +154,34 @@ footer {
   cursor: zoom-in;
 }
 
-/* === EFECTO BRILLO DORADO === */
-h1, h2, nav a:hover, nav a.active {
-  ...
+/* === EFECTO DORADO METÁLICO ELEGANTE === */
+
+/* Aplica a los títulos y los enlaces activos del menú */
+h1, h2, nav a.active, nav a:hover {
+  background: linear-gradient(90deg, #c9a74e, #f8e473, #c9a74e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(255, 227, 100, 0.4);
+  transition: all 0.4s ease-in-out;
 }
+
+/* Brillo más intenso al pasar el ratón */
+h1:hover, h2:hover, nav a:hover {
+  background: linear-gradient(90deg, #fff7c0, #ffe270, #fff7c0);
+  text-shadow: 0 0 20px rgba(255, 240, 150, 0.8),
+               0 0 35px rgba(255, 215, 0, 0.6);
+  transform: scale(1.02);
+}
+
+/* Subtítulo elegante y discreto */
+.sub {
+  color: #c0c0c0;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* Transición general para todo el texto */
+h1, h2, nav a {
+  transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.3s ease;
+}
+
