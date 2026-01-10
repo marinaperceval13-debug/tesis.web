@@ -1,0 +1,14 @@
+<section class="contacto">
+  <h2>Contacto</h2>
+  <p>Para cualquier consulta relacionada con el estudio:</p>
+
+  <ul>
+    <li><strong>Autor:</strong> Batsearcher</li>
+    <li><strong>Universidad:</strong> Universidad Bird Impact</li>
+    <li><strong>Email:</strong> batsearcher@birdimpact.edu</li>
+  </ul>
+
+  <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80"
+       alt="Molino eólico y aves al atardecer"
+       class="imagen-contacto">
+</section>
