@@ -154,34 +154,50 @@ footer {
   cursor: zoom-in;
 }
 
-/* === EFECTO DORADO METÁLICO ELEGANTE === */
+/* === EFECTO DORADO METÁLICO ANIMADO UNIVERSAL === */
 
-/* Aplica a los títulos y los enlaces activos del menú */
+/* Aplica solo a títulos y menú */
 h1, h2, nav a.active, nav a:hover {
-  background: linear-gradient(90deg, #c9a74e, #f8e473, #c9a74e);
+  /* Degradado dorado animado */
+  background: linear-gradient(
+    90deg,
+    #8f6b29,
+    #f8e473,
+    #fff9c4,
+    #f8e473,
+    #8f6b29
+  );
+  background-size: 400% auto;
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 12px rgba(255, 227, 100, 0.4);
+  animation: brilloDorado 10s linear infinite;
+  text-shadow: 0 0 10px rgba(255, 230, 150, 0.3);
   transition: all 0.4s ease-in-out;
 }
 
-/* Brillo más intenso al pasar el ratón */
+/* Efecto al pasar el ratón */
 h1:hover, h2:hover, nav a:hover {
-  background: linear-gradient(90deg, #fff7c0, #ffe270, #fff7c0);
-  text-shadow: 0 0 20px rgba(255, 240, 150, 0.8),
-               0 0 35px rgba(255, 215, 0, 0.6);
+  text-shadow: 0 0 25px rgba(255, 245, 150, 0.8),
+               0 0 40px rgba(255, 215, 0, 0.6);
   transform: scale(1.02);
 }
 
-/* Subtítulo elegante y discreto */
+/* Subtítulo elegante */
 .sub {
   color: #c0c0c0;
   font-style: italic;
   letter-spacing: 0.5px;
 }
 
-/* Transición general para todo el texto */
-h1, h2, nav a {
-  transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.3s ease;
+/* Animación: movimiento de brillo */
+@keyframes brilloDorado {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
