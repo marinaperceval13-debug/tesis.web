@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<script>
+  const user = prompt("Usuario:");
+  const pass = prompt("Contraseña:");
+
+  if (!(user === "batsearcher" && pass === "birdimpact2026")) {
+    document.write("<h2>❌ Acceso denegado</h2>");
+    setTimeout(() => window.location.href = "https://www.google.com", 1500);
+  }
+</script>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8">
