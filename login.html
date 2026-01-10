@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso restringido — Batsearcher</title>
+  <style>
+    body {
+      background: #0d1117;
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      padding-top: 10%;
+    }
+    h2 { color: #facc15; }
+    input {
+      margin: 10px;
+      padding: 10px;
+      width: 220px;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
+      font-size: 1rem;
+    }
+    button {
+      background: #facc15;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #eab308; }
+  </style>
+</head>
+<body>
+  <h2>🔒 Acceso restringido</h2>
+  <p>Introduce la contraseña para acceder a la tesis</p>
+  <input type="password" id="clave" placeholder="Contraseña">
+  <br>
+  <button onclick="entrar()">Entrar</button>
+
+  <script>
+    function entrar() {
+      const p = document.getElementById("clave").value;
+      if (p === "birdimpact2026") {
+        sessionStorage.setItem("acceso", "ok");
+        window.location.href = "index.html";
+      } else {
+        alert("Contraseña incorrecta 🦇");
+      }
+    }
+  </script>
+</body>
+</html>
