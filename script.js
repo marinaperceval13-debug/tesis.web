@@ -32,3 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cargar la primera pestaña (resumen)
   cargarPagina("resumen.html");
 });
+
+document.addEventListener("click", e => {
+  if (e.target && e.target.id === "volver-inicio") {
+    e.preventDefault();
+    const portada = document.querySelector(".portada");
+    const contenido = document.getElementById("contenido");
+    if (portada) {
+      portada.style.display = "block";
+      portada.style.opacity = "1";
+      contenido.innerHTML = "<p class='cargando'>Cargando contenido...</p>";
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+});
