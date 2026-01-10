@@ -6,28 +6,40 @@
   <title>Acceso restringido — Batsearcher</title>
   <style>
     body {
-      background: #0d1117;
+      background-color: #0d1117;
       color: #e5e7eb;
       font-family: "Inter", sans-serif;
       text-align: center;
-      padding-top: 15%;
+      padding-top: 10%;
+      transition: all 0.4s ease;
+    }
+    .login-box {
+      margin: auto;
+      max-width: 400px;
+      background: #161b22;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
     h1 {
       color: #facc15;
+      margin-bottom: 15px;
     }
     input {
-      margin: 10px;
+      width: 80%;
       padding: 10px;
-      width: 220px;
+      margin: 10px;
       border-radius: 8px;
       border: none;
+      background: #222;
+      color: #fff;
       text-align: center;
-      font-size: 1rem;
     }
     button {
       background: #facc15;
+      color: #111;
       border: none;
-      padding: 10px 25px;
+      padding: 10px 20px;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
@@ -38,25 +50,40 @@
   </style>
 </head>
 <body>
-  <h1>🔒 Acceso restringido</h1>
-  <p>Introduce la contraseña para acceder</p>
-  <input type="password" id="clave" placeholder="Contraseña">
-  <br>
-  <button onclick="entrar()">Entrar</button>
+  <div class="login-box" id="login">
+    <h1>🔒 Acceso restringido</h1>
+    <p>Introduce la contraseña para acceder:</p>
+    <input type="password" id="clave" placeholder="Contraseña" />
+    <br />
+    <button onclick="entrar()">Entrar</button>
+  </div>
+
+  <div id="contenido" style="display:none;">
+    <h1 style="color:#facc15;">Estudio de los sesgos en las estimaciones de mortalidad de aves y murciélagos</h1>
+    <p>Batsearcher — Universidad Bird Impact</p>
+    <hr />
+    <h2>Resumen / Abstract</h2>
+    <p>
+      Este estudio caracteriza sistemáticamente cómo se han estudiado y estimado los impactos
+      de parques eólicos sobre aves y murciélagos, identificando patrones, sesgos y prácticas metodológicas
+      que condicionan la fiabilidad de las estimaciones de mortalidad y riesgo.
+    </p>
+    <h2>Objetivos</h2>
+    <ul>
+      <li>Identificar los principales sesgos metodológicos en los estudios de mortalidad.</li>
+      <li>Analizar la variabilidad en las estimaciones entre regiones y especies.</li>
+      <li>Proponer buenas prácticas para mejorar la fiabilidad de los datos.</li>
+    </ul>
+  </div>
 
   <script>
     function entrar() {
       const clave = document.getElementById("clave").value.trim();
       if (clave === "birdimpact2026") {
-        document.body.innerHTML = `
-          <h1 style="color:#facc15;">Bienvenida, Batsearcher 🦇</h1>
-          <p style="margin-top:20px;">Cargando el contenido...</p>
-        `;
-        setTimeout(() => {
-          window.location.href = "contenido.html";
-        }, 1000);
+        document.getElementById("login").style.display = "none";
+        document.getElementById("contenido").style.display = "block";
       } else {
-        alert("Contraseña incorrecta");
+        alert("❌ Contraseña incorrecta");
       }
     }
   </script>
