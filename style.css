@@ -18,8 +18,14 @@ body {
   background-attachment: fixed;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%);
+  pointer-events: none;
+}
 
-/* ======== CABECERA ======== */
 header {
   text-align: center;
   padding: 3rem 1rem 2rem;
