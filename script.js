@@ -2,17 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("nav a");
   const contenido = document.getElementById("contenido");
   const portada = document.querySelector(".portada");
-
+ 
   async function cargarPagina(pagina) {
     contenido.innerHTML = "<p class='cargando'>Cargando...</p>";
     try {
       const respuesta = await fetch("contenido/" + pagina);
-      const html = await respuesta.text();
+      const html = await respuesta.text();  
       contenido.innerHTML = html;
-    } catch {
-      contenido.innerHTML = "<p>Error al cargar el contenido.</p>";
-    }
-  }
+   } catch (error) {
+  console.error("Error al cargar contenido:", error);
+  contenido.innerHTML = "<p>Error al cargar el contenido.</p>";
+}
 
   links.forEach(link => {
     link.addEventListener("click", e => {
