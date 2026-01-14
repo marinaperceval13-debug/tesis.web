@@ -24,6 +24,7 @@ body::after {
   inset: 0;
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 header {
@@ -146,6 +147,7 @@ footer {
   padding: 3rem 2rem;
   color: inherit;
   position: relative;
+  z-index: 1;
 }
 
 .portada h2 {
@@ -173,7 +175,7 @@ footer {
   background-position: 20% 40%, 80% 30%;
   background-repeat: no-repeat;
   background-size: 120px, 160px;
-  opacity: 0.08;
+  opacity: 0.2;
   pointer-events: none;
 }
 
