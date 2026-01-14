@@ -1,30 +1,111 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Batsearcher Thesis</title>
-  <link rel="stylesheet" href="estilo.css" />
-</head>
-<body>
-  <header class="portada">
-    <div class="overlay">
-      <h1>Estudio de los sesgos en las estimaciones<br>de mortalidad de aves y murciélagos</h1>
-      <p class="sub">BATSEARCHER — UNIVERSIDAD BIRD IMPACT</p>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-      <nav>
-        <ul>
-          <li><a href="#" class="active">Resumen</a></li>
-          <li><a href="#">Objetivos</a></li>
-          <li><a href="#">Metodología</a></li>
-          <li><a href="#">Resultados</a></li>
-          <li><a href="#">Bibliografía</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
+body {
+  font-family: 'Playfair Display', 'Merriweather', serif;
+  color: #f5e6b3;
+  background: #000;
+  overflow-x: hidden;
+}
 
-      <h2 class="bienvenida">Bienvenido a Batsearcher Thesis</h2>
-    </div>
-  </header>
-</body>
-</html>
+/* ======== PORTADA ======== */
+.portada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('ChatGPT Image 10 ene 2026, 21_37_26.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.85) 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* ======== TEXTO PRINCIPAL ======== */
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  text-transform: none;
+  background: linear-gradient(90deg, #b48a2e, #f4d679, #fff5b1, #f4d679, #b48a2e);
+  background-size: 400% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: brillo 10s linear infinite;
+  text-shadow: 0 0 20px rgba(255, 230, 150, 0.4);
+  margin-bottom: 0.8rem;
+}
+
+.sub {
+  color: #ccc;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+/* ======== NAVEGACIÓN ======== */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+  background: #facc15;
+  color: #111;
+}
+
+/* ======== TEXTO DE BIENVENIDA ======== */
+.bienvenida {
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #b48a2e, #f4d679, #fff5b1, #f4d679, #b48a2e);
+  background-size: 400% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: brillo 8s linear infinite;
+  text-shadow: 0 0 20px rgba(255, 230, 150, 0.6);
+}
+
+/* ======== ANIMACIÓN DORADA ======== */
+@keyframes brillo {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  h1 { font-size: 1.5rem; }
+  .bienvenida { font-size: 1.2rem; }
+  nav ul { flex-direction: column; }
+}
